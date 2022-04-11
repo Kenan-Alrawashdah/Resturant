@@ -7,9 +7,9 @@
       <div class="mb-3">
         <label for="recipient-name" class="col-form-label">Name</label>
         <input type="text" formControlName="name" class="form-control" id="recipient-name">
-         <span *ngIf="f['name'].touched && f['name'].invalid" class="text-danger font">
-            <span *ngIf="f['name'].errors && f['name'].errors['required']">Name is required.</span>
-            <span *ngIf="f['name'].errors && f['name'].errors['minlength']">Name should be 3 character.</span>
+         <span *ngIf="formControls['name'].touched && formControls['name'].invalid" class="text-danger font">
+            <span *ngIf="formControls['name'].errors && formControls['name'].errors['required']">Name is required.</span>
+            <span *ngIf="formControls['name'].errors && formControls['name'].errors['minlength']">Name should be 3 character.</span>
          </span>
       </div>
       <div class="mb-3">

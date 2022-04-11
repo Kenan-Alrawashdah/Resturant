@@ -20,8 +20,8 @@
     </i-feather>
   </div>
   <form [formGroup]="formGroup" (ngSubmit)="submit($event)" class="info">
-    <input class="heading" type="text" formControlName="name" [ngClass]="{input2text: !editMode}" [disabled]="!editMode">
-    <input class="subheading" type="text" formControlName="text"  [ngClass]="{input2text: !editMode}" [disabled]="!editMode">
+    <input class="heading" type="text" formControlName="name" [ngClass]="{input2text: !editMode}" [readonly]="!editMode">
+    <input class="subheading" type="text" formControlName="text"  [ngClass]="{input2text: !editMode}" [readonly]="!editMode">
 
     <div class="actions d-flex justify-content-end">
       <button class="btn btn-primary btn-lg m-2" (click)="editMode = true" *ngIf="!editMode">edit</button>

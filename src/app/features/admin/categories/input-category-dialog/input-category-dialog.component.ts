@@ -35,7 +35,7 @@ export class InputCategoryDialogComponent implements OnInit, OnChanges{
     })
   }
 
-  get f() {
+  get formControls() {
     return this.formCategory.controls;
   }
 

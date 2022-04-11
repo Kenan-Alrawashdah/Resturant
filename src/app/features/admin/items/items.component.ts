@@ -1,6 +1,8 @@
+import { CategoryService } from './../categories/category.service';
 import {Item} from 'src/app/core/interfaces/item';
 import {ItemService} from './item.service';
 import {Component, OnInit} from '@angular/core';
+import { Category } from 'src/app/core/interfaces/category';
 
 @Component({
   selector: 'app-items',
@@ -9,17 +11,33 @@ import {Component, OnInit} from '@angular/core';
 })
 export class ItemsComponent implements OnInit {
 
-   items : Item[]=[];
+   items: Item[] = [];
+   categoriesLookup: {[key: string]: Category} = {};
    modalItem!: Item
    visiable = false;
-  constructor(private itemService:ItemService) { }
 
-  ngOnInit(): void {
-    this.gitItem();
+  constructor(private itemService:ItemService, private categoryService: CategoryService) {
+
   }
 
-  gitItem(){
-    return this.itemService.getItem().subscribe(res => this.items = res);
+  ngOnInit(): void {
+    this.getCategories();
+  }
+
+  getCategories() {
+    this.categoryService.getCategorys().subscribe((categories) => {
+      if (categories && categories.length) {
+          for (const category of categories) {
+            this.categoriesLookup[category.id] = category;
+          }
+
+        this.getItems();
+      }
+    });
+  }
+
+  getItems(){
+    this.itemService.getItem().subscribe(res => this.items = res);
   }
 
   saveItem(event:Item){

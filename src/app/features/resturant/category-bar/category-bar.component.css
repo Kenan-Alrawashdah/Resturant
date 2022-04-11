@@ -22,8 +22,9 @@
 
 .categories::-webkit-scrollbar-thumb
 {
-  background-color: #000000;
-  border: 2px solid #555555;
+  background-color: #f5eeee;
+  border-bottom: 2px solid #555555;
+
 }
 
 .category{

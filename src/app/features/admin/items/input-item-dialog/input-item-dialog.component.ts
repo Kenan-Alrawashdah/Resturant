@@ -60,7 +60,7 @@ export class InputItemDialogComponent implements OnInit, OnChanges {
     this.closeModal()
   }
 
-  get f() {
+  get formControls() {
     return this.formItem.controls;
   }
 

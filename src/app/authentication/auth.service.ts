@@ -1,3 +1,4 @@
+import { BehaviorSubject } from 'rxjs';
 import { Admin } from './../core/interfaces/admin';
 import { HttpClient } from '@angular/common/http';
 import { Injectable } from '@angular/core';
@@ -8,14 +9,23 @@ import { map, Observable } from 'rxjs';
 })
 export class AuthService {
 
+  private currentUser$ = new BehaviorSubject<any>(null);
+
   private adminUrl = '/api/admins/';
   constructor(private http : HttpClient) { }
 
-  login(email : string , password : string): Observable<Admin> {
+
+  get currentUser() {
+    return this.currentUser$.asObservable();
+  }
+
+  login(email : string , password : string): Observable<boolean> {
     return this.http.get<Admin[]>(this.adminUrl)
        .pipe(
         map(resturants => {
-          return resturants.filter(admin => admin.email === email && admin.password === password)[0];
+          const admin =  resturants.filter(admin => admin.email === email && admin.password === password)[0];
+          this.currentUser$.next(admin);
+          return admin? true : false;
         })
       )
   }

@@ -1,3 +1,4 @@
+import { Router } from '@angular/router';
 import { AuthService } from './../auth.service';
 import { Component, OnInit } from '@angular/core';
 import { FormControl, FormGroup, Validators } from '@angular/forms';
@@ -10,8 +11,13 @@ import { FormControl, FormGroup, Validators } from '@angular/forms';
 export class LoginComponent implements OnInit {
 
   formLogin! : FormGroup;
-  valid = false;
-  constructor( private authService : AuthService) { }
+  invalid = false;
+  progress: boolean = false;
+
+  constructor(
+    private authService : AuthService,
+    private router: Router
+    ) { }
 
   ngOnInit(): void {
     this.formLogin= new FormGroup({
@@ -20,14 +26,18 @@ export class LoginComponent implements OnInit {
    });
  }
 
- get f() {
+ get formControls() {
   return this.formLogin.controls;
 }
  submit(){
-   this.authService.login(this.formLogin.value['email'],this.formLogin.value['password']).subscribe(res =>{
-        if(res != undefined){
-          console.log('kenan');
-        }
+   this.progress = true;
+   this.authService.login(this.formLogin.value.email,this.formLogin.value.password).subscribe(isLoggedIn =>{
+      if(isLoggedIn){
+        this.router.navigate(['/admin/profile']);
+      } else {
+        this.invalid = true;
+      }
+      this.progress = false;
    })
  }
 }

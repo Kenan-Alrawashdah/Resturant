@@ -1,3 +1,4 @@
+import { AuthService } from './../../authentication/auth.service';
 import {Component, ElementRef, HostListener, Input, OnInit, ViewChild} from '@angular/core';
 
 @Component({
@@ -7,11 +8,14 @@ import {Component, ElementRef, HostListener, Input, OnInit, ViewChild} from '@an
 })
 export class NavbarComponent implements OnInit {
 
-  @Input() autherized = false;
+  autherized = false;
   scrolled = false;
-  constructor() { }
+  constructor(
+    private authService: AuthService
+  ) { }
 
   ngOnInit(): void {
+    this.authService.currentUser.subscribe(user => this.autherized = !!user);
   }
 
 
