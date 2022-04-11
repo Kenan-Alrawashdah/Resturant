@@ -43,7 +43,8 @@ export class ProfileComponent implements OnInit{
   }
 
   submit($event: any) {
-    this.profileService.update({...this.formGroup.value, id: this.resturant.id}).subscribe(_ => {
+
+    this.profileService.update({...this.formGroup.value,image:this.image, id: this.resturant.id}).subscribe(_ => {
       this.resturant = {...this.formGroup.value, id: this.resturant.id}
     })
     this.editMode= false
