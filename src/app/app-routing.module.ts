@@ -20,7 +20,7 @@ const routes: Routes = [
       .then(m => m.AuthenticationModule),
   },
 
-  {path: '', redirectTo: 'resturant', pathMatch: 'full'}
+  {path: '', redirectTo: 'home', pathMatch: 'full'}
 ];
 
 @NgModule({
