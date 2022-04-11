@@ -1,3 +1,4 @@
+import { Router } from '@angular/router';
 import { BehaviorSubject } from 'rxjs';
 import { Admin } from './../core/interfaces/admin';
 import { HttpClient } from '@angular/common/http';
@@ -12,7 +13,7 @@ export class AuthService {
   private currentUser$ = new BehaviorSubject<any>(null);
 
   private adminUrl = '/api/admins/';
-  constructor(private http : HttpClient) { }
+  constructor(private http : HttpClient, private router: Router) { }
 
 
   get currentUser() {
@@ -28,5 +29,10 @@ export class AuthService {
           return admin? true : false;
         })
       )
+  }
+
+  logout() {
+    this.currentUser$.next(null);
+    this.router.navigate(['/home']);
   }
 }

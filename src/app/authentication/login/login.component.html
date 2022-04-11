@@ -1,7 +1,7 @@
 <div class="login">
   <div class="form-container">
     <form [formGroup]="formLogin" (ngSubmit)="submit()">
-      <div class="heading"><h2>Food App</h2></div>
+      <div class="heading"><h2 i18n="@@login-title">Welcome Back!</h2></div>
       <div class="div-input">
         <input type="text" class="" name="username" formControlName="email" placeholder="Email">
         <span *ngIf="formControls['email'].touched && formControls['email'].invalid" class="text-danger font">

@@ -9,15 +9,16 @@
       <div class="burger-bottom"></div>
     </label>
 
-    <h3 class="logo" routerLink="/home">RESTURANT</h3>
+    <h3 class="logo" routerLink="/home" i18n="@@resturant">RESTURANT</h3>
 
 
     <ul>
-      <li ><a class="active"  routerLink="/home">Home</a></li>
-      <li *ngIf="autherized"><a routerLink="/admin/categories">categories</a></li>
-      <li *ngIf="autherized"><a routerLink="/admin/items">items</a></li>
-      <li *ngIf="autherized"><a routerLink="/admin/profile">Profile</a></li>
-      <li><a routerLink="/auth/login">Login</a></li>
+      <li ><a routerLinkActive="active" routerLink="/home" i18n="@@home">Home</a></li>
+      <li *ngIf="autherized"><a routerLink="/admin/categories" routerLinkActive="active" i18n="@@categories">Categories</a></li>
+      <li *ngIf="autherized"><a routerLink="/admin/items" routerLinkActive="active" i18n="@@items">Items</a></li>
+      <li *ngIf="autherized"><a routerLink="/admin/profile" routerLinkActive="active" i18n="@@profile">Profile</a></li>
+      <li *ngIf="autherized"><a (click)="logout()" routerLinkActive="active" i18n="@@logout">Logout</a></li>
+      <li *ngIf="!autherized"><a routerLink="/auth/login" routerLinkActive="active" i18n="@@login">Login</a></li>
     </ul>
 
   </nav>

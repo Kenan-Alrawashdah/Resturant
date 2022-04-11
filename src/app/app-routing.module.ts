@@ -4,7 +4,7 @@ import { AuthGuard } from './authentication/auth.guard';
 
 const routes: Routes = [
   {
-    path: 'resturant',
+    path: 'home',
     loadChildren: () => import('./features/resturant/resturant.module')
       .then(m => m.ResturantModule),
   },

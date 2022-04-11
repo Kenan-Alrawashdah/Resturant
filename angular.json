@@ -13,6 +13,18 @@
           "strict": true
         }
       },
+      "i18n": {
+        "sourceLocale": {
+          "code": "en-US",
+          "baseHref": ""
+        },
+        "locales": {
+          "ar-JO": {
+            "translation": "src/locale/messages.ar-JO.json",
+            "baseHref": "/ar-JO/"
+          }
+        }
+      },
       "root": "",
       "sourceRoot": "src",
       "prefix": "app",
@@ -20,6 +32,8 @@
         "build": {
           "builder": "@angular-devkit/build-angular:browser",
           "options": {
+            "localize": ["en-US"],
+            "i18nMissingTranslation": "warning",
             "outputPath": "dist/resturant-app",
             "index": "src/index.html",
             "main": "src/main.ts",
@@ -56,6 +70,9 @@
               ],
               "outputHashing": "all"
             },
+            "ar-JO": {
+              "localize": ["ar-JO"]
+            },
             "development": {
               "buildOptimizer": false,
               "optimization": false,
@@ -75,6 +92,9 @@
             },
             "development": {
               "browserTarget": "resturant-app:build:development"
+            },
+            "ar-JO": {
+              "browserTarget": "resturant-app:build:ar-JO"
             }
           },
           "defaultConfiguration": "development"

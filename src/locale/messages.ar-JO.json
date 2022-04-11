@@ -1,0 +1,13 @@
+{
+  "locale": "ar-JO",
+  "translations": {
+    "login-title": "أهلا بعودتك",
+    "resturant": "المطعم",
+    "home": "الرئيسية",
+    "categories": "قائمة الاصناف",
+    "items": "قائمة العناصر",
+    "profile": "الملف الشخصي",
+    "login": "تسجيل دخول",
+    "logout": "تسجيل خروج"
+  }
+}

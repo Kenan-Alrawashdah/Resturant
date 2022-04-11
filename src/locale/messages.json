@@ -1,0 +1,13 @@
+{
+  "locale": "en-US",
+  "translations": {
+    "login-title": "Welcome Back!",
+    "resturant": "RESTURANT",
+    "home": "Home",
+    "categories": "Categories",
+    "items": "Items",
+    "profile": "Profile",
+    "login": "Login",
+    "logout": "Logout"
+  }
+}
