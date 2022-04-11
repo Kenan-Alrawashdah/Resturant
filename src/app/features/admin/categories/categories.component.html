@@ -1,0 +1,27 @@
+<app-input-category-dialog
+  [category]="modalCategory"
+  [visiable]="visiable"
+  (close)="closeModal()"
+  (saveCategoryEvent)="saveCategory($event)">
+</app-input-category-dialog>
+
+<button type="button" (click)="openModal()" class="btn btn-primary mb-3 mt-3">Add New Category</button>
+
+<table class="table">
+  <tr>
+    <th>Name</th>
+    <th>Desc</th>
+    <th>Actions</th>
+
+  </tr>
+  <tbody>
+    <tr *ngFor="let category of categories" >
+      <td> {{category.name}} </td>
+      <td>{{category.description}}</td>
+      <td>
+        <i-feather class=" text-danger icon" (click)="delete(category.id)" name="trash-2"></i-feather>
+        <i-feather class=" text-success icon" (click)="update(category)" name="edit"></i-feather>
+      </td>
+    </tr>
+  </tbody>
+</table>

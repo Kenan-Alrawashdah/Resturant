@@ -1,0 +1,6 @@
+<div class="home">
+  <app-header  class="header scrolled"></app-header>
+  <category-bar [selectedCategoryId]="selectedCategoryId" (selectCategory)="selectCategory($event)" [categories]="categories"></category-bar>
+  <app-meal-list [items]="getItems()"></app-meal-list>
+  <app-footer></app-footer>
+</div>

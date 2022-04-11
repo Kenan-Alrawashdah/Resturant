@@ -1,0 +1,26 @@
+<div class="login">
+  <div class="form-container">
+    <form [formGroup]="formLogin" (ngSubmit)="submit()">
+      <div class="heading"><h2>Food App</h2></div>
+      <span class="text-danger" *ngIf="valid">user name or password invalid</span>
+      <div class="div-input">
+        <input type="text" class="" name="username" formControlName="email" placeholder="Email">
+        <span *ngIf="f['email'].touched && f['email'].invalid" class="text-danger font">
+          <span *ngIf="f['email'].errors && f['email'].errors['required']">email is required!</span>
+          <span *ngIf="f['email'].errors && f['email'].errors['email']">this email is invalid!</span>
+       </span>
+       </div>
+       <div  class="div-input">
+        <input type="text" name="password" formControlName="password" placeholder="Password">
+        <span *ngIf="f['password'].touched && f['password'].invalid" class="text-danger font">
+          <span *ngIf="f['password'].errors && f['password'].errors['required']">password is required!</span>
+       </span>
+       </div>
+
+      <button type="submit" [disabled]="formLogin.invalid">Login</button>
+    </form>
+  </div>
+  <div class="image-container">
+    <img src="assets/login.png" alt="Fruit Image">
+  </div>
+</div>

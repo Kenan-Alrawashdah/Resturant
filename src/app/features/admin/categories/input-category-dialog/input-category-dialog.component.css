@@ -1,0 +1,55 @@
+.myModal{
+  position: fixed;
+  top: -100%;
+  left: 50%;
+  transform: translate(-50%,0);
+  padding: 20px;
+  z-index: 300;
+  transition: .5s;
+  width: 40%;
+  background-color: white;
+  border-radius: 3px;
+}
+.header{
+  padding: 15px;
+  text-align: end;
+}
+.visiable{
+  top: 20%;
+  transition: .5s;
+}
+.myBackdrop{
+  background-color: rgba(0, 0, 0, 0.4);
+  z-index: 200;
+  position: fixed;
+  top: 0;
+  left: 0;
+  right: 0;
+  bottom: 0;
+}
+.myTitle{
+  padding-bottom: 5px;
+}
+.div-btn{
+  text-align: end;
+}
+.div-btn button{
+  margin-right: 8px;
+
+}
+
+
+@media (max-width : 600px) {
+  .font{
+    font-size: 12px;
+  }
+  .myModal{
+    width: 100%;
+  }
+}
+
+@media (max-width : 900px) {
+  .myModal{
+    width: 75%;
+  }
+}

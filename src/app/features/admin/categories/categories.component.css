@@ -1,0 +1,12 @@
+
+.icon{
+  cursor: pointer;
+  margin: 0 10px;
+}
+table, th, td {
+  padding: 15px;
+}
+table{
+  /* width: 70%; */
+  margin: auto;
+}

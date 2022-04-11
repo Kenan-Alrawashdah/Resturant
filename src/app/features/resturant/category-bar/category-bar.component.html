@@ -1,0 +1,7 @@
+
+<ul class="categories"  >
+  <li class="category"
+      [ngClass]="{active: category.id === selectedCategoryId}"
+      (click)="selectCategory.emit(category.id)"
+      *ngFor="let category of categories">{{category.name}} </li>
+</ul>

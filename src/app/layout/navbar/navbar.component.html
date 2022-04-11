@@ -1,0 +1,24 @@
+
+  <nav [ngClass]="{scrolled: scrolled}">
+
+    <input type="checkbox" id="check" >
+    <label for="check" class="checkbtn">
+<!--      <i-feather class="icon" name="align-justify"></i-feather>-->
+      <div class="burger-top"></div>
+      <div class="burger-med"></div>
+      <div class="burger-bottom"></div>
+    </label>
+
+    <h3 class="logo" routerLink="/home">RESTURANT</h3>
+
+
+    <ul>
+      <li ><a class="active"  routerLink="/home">Home</a></li>
+<!--      <li *ngIf="autherized"><a href="#">Category</a></li>-->
+      <li ><a routerLink="/admin/categories">categories</a></li>
+      <li><a routerLink="/admin/items">items</a></li>
+      <li ><a routerLink="/admin/profile">Profile</a></li>
+      <li><a routerLink="/auth/login">Login</a></li>
+    </ul>
+
+  </nav>

@@ -1,0 +1,24 @@
+.home{
+  position: relative;
+}
+
+.navbar{
+  width: 100%;
+  height: 80px;
+  position:fixed;
+  top: 0;
+  left: 0;
+  z-index: 100;
+  padding: 0 100px;
+}
+
+
+.meals{
+  width: 100%;
+}
+
+@media (max-width: 600px) {
+  .navbar{
+    padding: 0;
+  }
+}

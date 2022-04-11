@@ -1,0 +1,13 @@
+<ul class="meal-list" >
+  <li class="meal" *ngFor="let meal of items">
+    <img src="{{meal.image}}" alt="meal image">
+    <div class="content">
+      <h4 class="name">{{meal.name}}</h4>
+      <p class="description">{{meal.description}}</p>
+      <div class="info">
+        <span class="category">{{meal.categoryId}}</span>
+        <span class="price">{{meal.price}}$</span>
+      </div>
+    </div>
+  </li>
+</ul>

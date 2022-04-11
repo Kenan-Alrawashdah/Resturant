@@ -1,0 +1,34 @@
+
+<div class="profile">
+  <div class="image">
+      <img [src]="image" alt="">
+  </div>
+  <div class="overlay"></div>
+  <div class="input-image" *ngIf="editMode">
+    <input
+      type="file"
+      (change)="onFileSelected($event)"
+      required=""
+      class="form-control"
+      id="selectedFile"
+      style="display: none"/>
+    <i-feather class="iconImage"
+               onclick="document.getElementById('selectedFile').click();"
+               title="add Photo"
+               name="edit">
+
+    </i-feather>
+  </div>
+  <form [formGroup]="formGroup" (ngSubmit)="submit($event)" class="info">
+    <input class="heading" type="text" formControlName="name" [ngClass]="{input2text: !editMode}" [disabled]="!editMode">
+    <input class="subheading" type="text" formControlName="text"  [ngClass]="{input2text: !editMode}" [disabled]="!editMode">
+
+    <div class="actions d-flex justify-content-end">
+      <button class="btn btn-primary btn-lg m-2" (click)="editMode = true" *ngIf="!editMode">edit</button>
+      <button class="btn btn-danger btn-lg m-2" (click)="cancel()" *ngIf="editMode">Cancel</button>
+      <button class="btn btn-success btn-lg m-2" type="submit" *ngIf="editMode">Save</button>
+    </div>
+
+  </form>
+</div>
+
